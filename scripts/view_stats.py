@@ -2,6 +2,13 @@
 """
 View current statistics and performance
 """
+import sys
+from pathlib import Path
+
+# Add project root to Python path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 from database.models import Post, Comment, Metric, Learning, get_session
 from datetime import datetime, timedelta
 from loguru import logger
